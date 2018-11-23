@@ -5,17 +5,18 @@ function [Bt,stem_Bt]=aggregate_adja(stem_B1,B11,id_layer1,coef1,stem_B2,B12,id_
 num1_max=max(id_layer1);
 num2_max=max(id_layer2);
 num_max=max(num1_max,num2_max); %num_max is the number of layer after aggregation
-num1=zeros(1,num_max);
-num2=zeros(1,num_max);
+
 stem_B1=[(1:size(stem_B1,1))',stem_B1,coef1(2:end)];
 stem_B2=[(1:size(stem_B2,1))',stem_B2,coef2(2:end)];
 B11=[(1:size(B11,1))',B11];
 B12=[(1:size(B12,1))',B12];
 
+num1=zeros(1,num_max); % 第一个网络中各层有多少个节点
 for ii=1:num1_max
     num1(ii)=length(find(id_layer1==ii));
 end
 
+num2=zeros(1,num_max); % 第二个网络中各层有多少个节点
 for ii=1:num2_max
     num2(ii)=length(find(id_layer2==ii));
 end

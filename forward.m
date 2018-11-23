@@ -81,7 +81,7 @@ for k = 1:length(lambda)
         lof = lofk;
         execute_prune = 'ok';
     end
-    fprintf('lambda: %2.2d, error: %6.4d, lof: %6.4d, std: %6.4d, prune? %s \n', lambda(k), errk, lofk, stdsk, execute_prune);
+    fprintf('lambda: %2.2f, error: %6.4f, lof: %6.4f, std: %6.4f, prune? %s \n', lambda(k), errk, lofk, stdsk, execute_prune);
 end
 
 %% Êä³ö½á¹û
@@ -91,5 +91,5 @@ err = norm(hat_y - y)^2/norm(y-mean(y))^2;
 stds = std(hat_y - y);
 time = toc(start_time);
 
-fprintf('Final results: lambda: %2.2d, error: %6.4d, lof: %6.4d, std: %6.4d, ellapsed time: %d \n', lambda(k), err, lof, stds, time);
+fprintf('Final results: lambda: %2.2f, error: %6.4f, lof: %6.4f, std: %6.4f, ellapsed time: %f \n', lambda(k), err, lof, stds, time);
 

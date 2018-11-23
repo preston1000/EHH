@@ -11,6 +11,7 @@ config_file = 'config.ini';
 
 A = textread(strcat('./data/' , data_file));  % 每一行是一个样本，最后一列是y，前面是x
 
+
 % miny = min(A(:,end));
 % maxy = max(A(:,end));
 % A(:,end) = (A(:,end)-miny)/(maxy-miny);  %you can finish this step by modifyling the data file
