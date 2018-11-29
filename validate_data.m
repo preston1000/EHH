@@ -19,4 +19,3 @@ function [x_train, y_train, x_test, y_test] = validate_data(A, percent_train)
 
     x_test = data_test(:,1:end-1);
     y_test = data_test(:,end);
-    
