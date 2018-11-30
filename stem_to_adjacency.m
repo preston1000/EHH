@@ -8,8 +8,8 @@ function [ adjacency ] = stem_to_adjacency( stem )
     
     num_nodes = size(stem, 1);
     
-    [col, row] = find(stem > 0);
+    [col, ~, value] = find(stem);
     
-    adjacency = sparse(row, col, ones(size(row)), num_nodes, num_nodes );
+    adjacency = sparse(value, col, ones(size(col)), num_nodes, num_nodes );
 
 

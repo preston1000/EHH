@@ -10,7 +10,7 @@ end
 num_nodes = size(adjacency, 1);
 stem = zeros(num_nodes, 2);
 for i = 1:num_nodes
-    previous = find(adjacency(:, num_nodes));
+    previous = find(adjacency(:, i));
     if isempty(previous) 
         stem(i, :) = [0 0];
     elseif length(previous) ~= 2
