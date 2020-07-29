@@ -58,7 +58,8 @@ function [ netMerged, subNets, weightPerSubNet, statisticsPerNet, statisticTrain
     P = 2 * (f_ehh_TT' *f_ehh_TT);
     P = (P + P')/2;
     q = -2 * f_ehh_TT' * yTrain; %y_validate;
-    lb = zeros(parameters.num_train, 1);
+%     lb = zeros(parameters.num_train, 1);
+    lb = zeros(length(q), 1);
     [ratio, ~] = quadprog(P, q, [], [], [],[], lb, []);
     validIndicator = ratio < parameters.THRESHOLD_FOR_SUBNETS; % delete those redundant layers with too low weights
     ratio(validIndicator) = 0;
